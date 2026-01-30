@@ -14,9 +14,10 @@ function Results({ result }) {
 
       <p>
         <b>Estimated time to financial stress:</b>{" "}
-        {result.time_to_stress_months
-          ? `${result.time_to_stress_months} months`
-          : "No immediate stress"}
+        {result.time_to_stress_months !== null
+  ? `${result.time_to_stress_months} months`
+  : "No immediate stress"}
+
       </p>
 
       <h3>AI Explainability</h3>

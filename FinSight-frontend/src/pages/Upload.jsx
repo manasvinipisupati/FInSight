@@ -28,11 +28,11 @@ function Upload({ setResult }) {
     console.log("Response status:", response.status);
 
     if (!response.ok) {
-      const text = await response.text();
-      console.error("Backend error:", text);
-      alert("Backend error. Check console.");
-      return;
-    }
+  const err = await response.json();
+  alert(err.error || "Invalid CSV for selected user type");
+  return;
+}
+
 
     const data = await response.json();
     console.log("Result received:", data);
